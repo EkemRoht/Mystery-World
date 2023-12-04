@@ -11,6 +11,6 @@
       <h3>Look, Mom, I'm on TV.</h3>
     </hgroup>
   </nav>
-  //just add another protos here
+  //just add another protos here!
   <ComponentExample/>
 </main>

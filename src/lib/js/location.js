@@ -1,4 +1,4 @@
-import {nd6, randArrElement} from "./utils.js";
+import {nd6, randArrElement, randNum} from "./utils.js";
 import locationTypes from "../assets/locationTypes.json";
 
 export default class Location {
@@ -9,6 +9,7 @@ export default class Location {
         const locationType = this.generateRandomLocationType(region.terrainType);
         this.type = locationType.type;
         this.name = locationType.typeName;
+        this.size = randNum(1, 6);
     }
 
     getQiSaturation (tier) {

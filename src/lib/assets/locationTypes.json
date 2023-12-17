@@ -1,20 +1,4 @@
 {
-    "small_village": {
-        "typeName": "Small Village",
-        "availableTerrain": ["forest", "mountain", "lake", "plains", "desert"]
-    },
-    "village": {
-        "typeName": "Village",
-        "availableTerrain": ["forest", "mountain", "lake", "plains"]
-    },
-    "city": {
-        "typeName": "City",
-        "availableTerrain": ["forest", "lake", "plains"]
-    },
-    "big_city": {
-        "typeName": "Big City",
-        "availableTerrain": ["lake", "plains"]
-    },
     "oasis": {
         "typeName": "Oasis",
         "availableTerrain": ["desert"]

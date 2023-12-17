@@ -2,7 +2,7 @@
     export let locations;  // Принимаем массив объектов локаций
 </script>
 
-<div class="location-list">
+<div>
     {#each locations as location}
         <div class="location-item">
             <strong>{location.name}</strong>

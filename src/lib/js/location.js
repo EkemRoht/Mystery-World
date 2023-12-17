@@ -1,10 +1,14 @@
-import { nd6 } from "./utils.js";
+import {nd6, randArrElement} from "./utils.js";
+import locationTypes from "../assets/locationTypes.json";
 
 export default class Location {
-    constructor (qiTier, wildnessTier, skyFuryTier) {
-        this.qiSaturation = this.getQiSaturation(qiTier);
-        this.natureWildness = this.getNatureWildness(wildnessTier);
-        this.skyFury = this.getSkyFury(skyFuryTier);
+    constructor (region) {
+        this.qiSaturation = this.getQiSaturation(region.qiTier);
+        this.natureWildness = this.getNatureWildness(region.wildnessTier);
+        this.skyFury = this.getSkyFury(region.skyFuryTier);
+        const locationType = this.generateRandomLocationType(region.terrainType);
+        this.type = locationType.type;
+        this.name = locationType.typeName;
     }
 
     getQiSaturation (tier) {
@@ -48,5 +52,11 @@ export default class Location {
             case 'big_failure':
                 return 'high_pleased_sky';
         }
+    }
+    generateRandomLocationType(terrainType) {
+        const availableLocations = Object.entries(locationTypes)
+            .filter(([key, value]) => value.availableTerrain.includes(terrainType))
+            .map(([key, value]) => ({ type: key, typeName: value.typeName }));
+        return randArrElement(availableLocations);
     }
 }

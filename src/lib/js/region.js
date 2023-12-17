@@ -29,7 +29,7 @@ export default class Region {
 
         // Creating each location
         for (let i = 0; i < numLocations; i++) {
-            const location = new Location(this.qiTier, this.wildnessTier, this.skyFuryTier);
+            const location = new Location(this);
             locations.push(location);
         }
 

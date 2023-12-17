@@ -1,0 +1,50 @@
+{
+    "small_village": {
+        "typeName": "Small Village",
+        "availableTerrain": ["forest", "mountain", "lake", "plains", "desert"]
+    },
+    "village": {
+        "typeName": "Village",
+        "availableTerrain": ["forest", "mountain", "lake", "plains"]
+    },
+    "city": {
+        "typeName": "City",
+        "availableTerrain": ["forest", "lake", "plains"]
+    },
+    "big_city": {
+        "typeName": "Big City",
+        "availableTerrain": ["lake", "plains"]
+    },
+    "oasis": {
+        "typeName": "Oasis",
+        "availableTerrain": ["desert"]
+    },
+    "desert": {
+        "typeName": "Desert",
+        "availableTerrain": ["desert"]
+    },
+    "plains": {
+        "typeName": "Plains",
+        "availableTerrain": ["plains"]
+    },
+    "forest": {
+        "typeName": "Forest",
+        "availableTerrain": ["forest"]
+    },
+    "mountains": {
+        "typeName": "Mountains",
+        "availableTerrain": ["mountain"]
+    },
+    "lake": {
+        "typeName": "Lake",
+        "availableTerrain": ["lake"]
+    },
+    "coast": {
+        "typeName": "Coast",
+        "availableTerrain": ["lake"]
+    },
+    "swamp": {
+        "typeName": "Swamp",
+        "availableTerrain": ["forest", "plains"]
+    }
+}

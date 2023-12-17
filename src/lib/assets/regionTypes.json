@@ -1,0 +1,37 @@
+{
+    "forest": {
+        "typeName": "Forest",
+        "nameParts": [
+            ["Mysterious", "Emerald", "Bamboo", "Misty", "Enchanted", "Whispering", "Lush", "Serenade", "Harmonious", "Tranquil"],
+            ["Forest", "Grove", "Bamboo", "Valley"]
+        ]
+    },
+    "mountain": {
+        "typeName": "Mountain",
+        "nameParts": [
+            ["Majestic", "Rocky", "Snowy", "Windy", "Glorious", "Mighty", "High", "Grand", "Eternal", "Breathtaking"],
+            ["Mountain", "Peak", "Cliff", "Pass"]
+        ]
+    },
+    "lake": {
+        "typeName": "Lake",
+        "nameParts": [
+            ["Clear", "Sparkling", "Quiet", "Azure", "Peaceful", "Crystal", "Sapphire", "Tranquil", "Calm", "Reflecting"],
+            ["Lake", "Bay", "Waterbody", "Inlet"]
+        ]
+    },
+    "desert": {
+        "typeName": "Desert",
+        "nameParts": [
+            ["Endless", "Sandy", "Sunny", "Roaring", "Golden", "Vast", "Arid", "Boundless", "Searing", "Relentless"],
+            ["Desert", "Dune", "Oasis", "Flat"]
+        ]
+    },
+    "plains": {
+        "typeName": "Plains",
+        "nameParts": [
+            ["Green", "Silent", "Endless", "Fertile", "Gentle", "Vast", "Open", "Harmonious", "Peaceful", "Grazing"],
+            ["Steppe", "Meadow", "Plain", "Field"]
+        ]
+    }
+}

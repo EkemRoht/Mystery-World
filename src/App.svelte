@@ -1,7 +1,7 @@
 <script>
   import '@picocss/pico';
   import './app.css';
-  import ComponentExample from "./lib/ComponentExample.svelte";
+  import WorldProto from "./lib/WPComponents/WorldProto.svelte";
 </script>
 
 <main class="container">
@@ -11,6 +11,6 @@
       <h3>Look, Mom, I'm on TV.</h3>
     </hgroup>
   </nav>
-  //just add another protos here!
-  <ComponentExample/>
+
+  <WorldProto/>
 </main>

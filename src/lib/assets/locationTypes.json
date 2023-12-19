@@ -62,5 +62,21 @@
             ["Murky", "Mossy", "Eerie", "Gloomy", "Hazy", "Soggy", "Shadowy", "Dank", "Whispering", "Serpentine"],
             ["Swamp", "Bog", "Marsh", "Wetlands"]
         ]
+    },
+    "outpost": {
+        "typeName": "Outpost",
+        "availableTerrain": ["forest", "mountain", "lake", "desert", "plains"],
+        "nameParts": [
+            ["Remote", "Isolated", "Guarded", "Rustic", "Vigilant", "Watchful", "Pioneer", "Frontier", "Solitary", "Strategic"],
+            ["Outpost", "Camp", "Station", "Perimeter"]
+        ]
+    },
+    "small_village": {
+        "typeName": "Small Village",
+        "availableTerrain": ["forest", "mountain", "lake", "desert", "plains"],
+        "nameParts": [
+            ["Quaint", "Charming", "Cozy", "Tranquil", "Picturesque", "Idyllic", "Friendly", "Close-knit", "Welcoming", "Homely"],
+            ["Village", "Hamlet", "Settlement", "Community"]
+        ]
     }
 }

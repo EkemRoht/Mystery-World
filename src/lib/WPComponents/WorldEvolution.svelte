@@ -12,13 +12,15 @@
             let occupancyTry = nd6($world.worldTier - region.wildnessTier);
             switch (occupancyTry) {
                 case 'great_success':
-                    entry += `They were incredibly successful and in no time a village grew up here. (T1W)`
+                    settlementLocation.type = 'small_village';
+                    entry += `They were incredibly successful and in no time a village grew up here. (T1W)`;
                     break;
                 case 'success':
+                    settlementLocation.type = 'outpost';
                     entry += `They succeeded and established an outpost. (T0S)`;
                     break;
                 case 'small_success':
-                    entry += `They faced many obstacles but established an outpost. (T0W)`
+                    entry += `They faced many obstacles but established an outpost. (T0W)`;
                     break;
                 default:
                     entry += `But all died a horrible death.`;
@@ -32,6 +34,7 @@
             arr.push(entry)
         });
         logs = arr;
+        console.log($world)
     }
     evolution()
 </script>

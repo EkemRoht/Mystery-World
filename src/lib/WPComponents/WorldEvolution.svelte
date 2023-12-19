@@ -36,10 +36,10 @@
         logs = arr;
         console.log($world)
     }
-    evolution()
+    // evolution()
 </script>
 
-{#each logs as post}
+{#each $world.logs as post}
     <p>
         {post}
     </p>

@@ -1,34 +1,66 @@
 {
     "oasis": {
         "typeName": "Oasis",
-        "availableTerrain": ["desert"]
+        "availableTerrain": ["desert"],
+        "nameParts": [
+            ["Lush", "Verdant", "Refreshing", "Palm", "Tranquil", "Serenade", "Harmonious", "Paradise", "Mirage", "Celestial"],
+            ["Oasis", "Grove", "Spring", "Sanctuary"]
+        ]
     },
     "desert": {
         "typeName": "Desert",
-        "availableTerrain": ["desert"]
+        "availableTerrain": ["desert"],
+        "nameParts": [
+            ["Endless", "Sizzling", "Golden", "Sandstorm", "Majestic", "Silent", "Whispering", "Eternal", "Dunes", "Arid"],
+            ["Desert", "Wastes", "Sands", "Dunes"]
+        ]
     },
     "plains": {
         "typeName": "Plains",
-        "availableTerrain": ["plains"]
+        "availableTerrain": ["plains"],
+        "nameParts": [
+            ["Endless", "Swaying", "Golden", "Bountiful", "Gentle", "Whispering", "Vast", "Serene", "Harmonious", "Tranquil"],
+            ["Fields", "Meadows", "Plains", "Prairie"]
+        ]
     },
     "forest": {
         "typeName": "Forest",
-        "availableTerrain": ["forest"]
+        "availableTerrain": ["forest"],
+        "nameParts": [
+            ["Mysterious", "Emerald", "Bamboo", "Misty", "Enchanted", "Whispering", "Lush", "Serenade", "Harmonious", "Tranquil"],
+            ["Forest", "Grove", "Bamboo", "Valley"]
+        ]
     },
     "mountains": {
         "typeName": "Mountains",
-        "availableTerrain": ["mountain"]
+        "availableTerrain": ["mountain"],
+        "nameParts": [
+            ["Majestic", "Snow-capped", "Eternal", "Echoing", "Misty", "Thundering", "Serene", "Mystical", "Celestial", "Awe-inspiring"],
+            ["Peaks", "Summits", "Ridges", "Heights"]
+        ]
     },
     "lake": {
         "typeName": "Lake",
-        "availableTerrain": ["lake"]
+        "availableTerrain": ["lake"],
+        "nameParts": [
+            ["Crystal", "Sapphire", "Reflecting", "Azure", "Tranquil", "Cerulean", "Misty", "Ethereal", "Serene", "Harmonious"],
+            ["Lake", "Lagoon", "Waters", "Reservoir"]
+        ]
     },
     "coast": {
         "typeName": "Coast",
-        "availableTerrain": ["lake"]
+        "availableTerrain": ["lake"],
+        "nameParts": [
+            ["Golden", "Sandy", "Azure", "Coral", "Windy", "Sun-kissed", "Secluded", "Sparkling", "Marine", "Peaceful"],
+            ["Shore", "Beach", "Coast", "Seashore"]
+        ]
     },
     "swamp": {
         "typeName": "Swamp",
-        "availableTerrain": ["forest", "plains"]
+        "availableTerrain": ["forest", "plains"],
+        "nameParts": [
+            ["Murky", "Mossy", "Eerie", "Gloomy", "Hazy", "Soggy", "Shadowy", "Dank", "Whispering", "Serpentine"],
+            ["Swamp", "Bog", "Marsh", "Wetlands"]
+        ]
     }
 }

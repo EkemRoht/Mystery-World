@@ -1,4 +1,4 @@
-import {nd6, randArrElement, randNum} from "./utils.js";
+import {generateRandomName, nd6, randArrElement, randNum} from "./utils.js";
 import locationTypes from "../assets/locationTypes.json";
 
 export default class Location {
@@ -8,10 +8,13 @@ export default class Location {
         this.skyFury = this.getSkyFury(region.skyFuryTier);
         const locationType = this.generateRandomLocationType(region.terrainType);
         this.type = locationType.type;
-        this.name = locationType.typeName;
+        this.name = this.generateName(this.type);
         this.size = randNum(1, 6);
     }
 
+    generateName(type) {
+        return generateRandomName(locationTypes[type].nameParts);
+    }
     getQiSaturation (tier) {
         switch (nd6(tier)) {
             case 'great_success':

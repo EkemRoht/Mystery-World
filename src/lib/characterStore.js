@@ -1,14 +1,10 @@
 import {writable} from "svelte/store";
 
-function createCharacterStore () {
-    const { subscribe, update, set } = writable(null);
-
+function createCharacterStore (baseStat) {
     return {
-        strength: 0,
-        subscribe,
-        inc: (param) => {console.log(param)},
-        dec: (param) => update(n => n[param] - 1)
+        strength: writable(baseStat),
+        dexterity: writable(baseStat)
     };
 }
 
-export const mainCharacter = createCharacterStore();
+export const mainCharacter = createCharacterStore(2);

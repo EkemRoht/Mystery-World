@@ -36,6 +36,21 @@
   --switch-checked-background-color: var(--primary);
 }
 
-a {
+a, button {
   cursor: pointer;
 }
+
+/* .incrementor {
+  display: inline;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: auto;
+}
+
+.incrementor:hover,:active,:focus {
+  text-decoration-thickness: 1px;
+  background-color: transparent;
+  --border-color: transparent;
+} */

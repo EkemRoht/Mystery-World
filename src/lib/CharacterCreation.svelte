@@ -3,8 +3,6 @@
     let character = {
         strength: 0
     }
-
-    
 </script>
 
 <style>
@@ -17,6 +15,14 @@
 <table>
     <tr>
         <td><strong>Strength</strong></td>
+        <td>
+            <a>-</a>
+            {Array.from({ length: 6 }, (_, i) => i < character.strength ? '★' : '☆').join('')}
+            <a>+</a>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Dexterity</strong></td>
         <td>
             <a>-</a>
             {Array.from({ length: 6 }, (_, i) => i < character.strength ? '★' : '☆').join('')}

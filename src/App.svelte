@@ -1,8 +1,7 @@
 <script>
   import '@picocss/pico';
   import './app.css';
-  import ComponentExample from "./lib/ComponentExample.svelte";
-  import CharacterCreation from "./lib/CharacterCreation.svelte";
+  import BattleProto from "./lib/BattleProto.svelte";
 </script>
 
 <main class="container">
@@ -13,5 +12,5 @@
     </hgroup>
   </nav>
 
-  <CharacterCreation/>
+  <BattleProto/>
 </main>

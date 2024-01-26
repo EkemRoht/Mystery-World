@@ -1,7 +1,7 @@
 <script>
   import '@picocss/pico';
   import './app.css';
-  import BattleProto from "./lib/BattleProto.svelte";
+  import BattleProto from "./lib/battleProto/BattleProto.svelte";
 </script>
 
 <main class="container">

@@ -27,5 +27,23 @@ export class Character {
                 'injuries': []
             }
         };
+        this.characteristics = {
+            'Agility': {
+                'masteryLevel': 0,
+                'masteryCircle': 0
+            }
+        };
+        this.skills = {
+            'Evasion': {
+                'relatedCharacteristic': 'Agility',
+                'masteryLevel': 0,
+                'masteryCircle': 0
+            }
+        };
     }
+
+     attack(target) {
+
+         // target parameter represents the target of the attack.
+     }
 }

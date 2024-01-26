@@ -42,8 +42,20 @@ export class Character {
         };
     }
 
-     attack(target) {
+    attack(target) {
+        // Get a list of the target's body parts
+        const bodyParts = Object.keys(target.bodyParts);
 
-         // target parameter represents the target of the attack.
-     }
+        // Choose a random body part to injure
+        const randomBodyPart = bodyParts[Math.floor(Math.random() * bodyParts.length)];
+
+        // Add a new injury to the selected body part
+        target.bodyParts[randomBodyPart].injuries.push('wound');
+
+        // Check the overall status of the injured body part
+        if (target.bodyParts[randomBodyPart].injuries.length > 0) {
+            target.bodyParts[randomBodyPart].status = 'injured';
+        }
+        console.log(target);
+    }
 }

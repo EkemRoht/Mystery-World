@@ -1,8 +1,21 @@
 <script>
-	import {Character} from "./character.js";
+    import {Character} from "./character.js";
+    import {writable} from 'svelte/store';
+    import Injuries from "./Injuries.svelte";
 
-	let playerCharacter = new Character('player');
-	let enemyCharacter = new Character('enemy');
+    const playerCharacter = writable(new Character('player')); // создание стора для playerCharacter
+    const enemyCharacter = writable(new Character('enemy')); // создание стора для enemyCharacter
 </script>
 
-<button on:click="{() => playerCharacter.attack(enemyCharacter)}">Простой удар</button>
+<div class="grid">
+    <div><Injuries character={$playerCharacter}/></div>
+    <div><Injuries character={$enemyCharacter}/></div>
+</div>
+<button on:click="{() => {
+    $playerCharacter.attack($enemyCharacter); // исползование $ для доступа к текущему значению стора
+    playerCharacter.set($playerCharacter); // обновление стора
+    enemyCharacter.set($enemyCharacter); // обновление стора
+}}">Простой удар</button>
+
+
+

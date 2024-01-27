@@ -5,17 +5,30 @@
 
     const playerCharacter = writable(new Character('player')); // создание стора для playerCharacter
     const enemyCharacter = writable(new Character('enemy')); // создание стора для enemyCharacter
+
+    // Отдельная функция безоружной атаки
+    function unarmedAttack() {
+        const bodyPart = getRandomItem(bodyParts); // выбираем случайную часть тела для атаки
+        const targetCharacter = Math.random() < 0.5 ? playerCharacter : enemyCharacter; // выбор цели атаки случайным образом
+        const target = $targetCharacter;
+
+        // Атакуем выбранную часть тела
+        if(!target.bodyParts[bodyPart]) {
+            target.bodyParts[bodyPart] = {status: 'healthy', injuries: []};
+        }
+
+        const attackSuccess = Math.random() < 0.5; // 50% шанс успеха атаки
+        if (attackSuccess) {
+            target.bodyParts[bodyPart].status = 'damaged';
+            target.bodyParts[bodyPart].injuries.push('cut');
+        }
+
+        targetCharacter.set(target); // Применяем изменения к целевому персонажу
+    }
 </script>
 
 <div class="grid">
     <div><Injuries character={$playerCharacter}/></div>
     <div><Injuries character={$enemyCharacter}/></div>
 </div>
-<button on:click="{() => {
-    $playerCharacter.attack($enemyCharacter); // исползование $ для доступа к текущему значению стора
-    playerCharacter.set($playerCharacter); // обновление стора
-    enemyCharacter.set($enemyCharacter); // обновление стора
-}}">Простой удар</button>
-
-
-
+<button on:click="{unarmedAttack}">Простой удар</button>

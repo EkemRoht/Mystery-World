@@ -1,61 +1,60 @@
+class BodyPart {
+    constructor() {
+        this.status = 'fine';
+        this.injuries = [];
+    }
+}
+
+class Characteristic {
+    constructor() {
+        this.masteryLevel = 0;
+        this.masteryCircle = 0;
+    }
+}
+
+class Skill extends Characteristic {
+    constructor(relatedCharacteristic) {
+        super();
+        this.relatedCharacteristic = relatedCharacteristic;
+    }
+}
+
 export class Character {
     constructor(name) {
         this.name = name;
-        this.bodyParts = {
-            'leftHand': {
-                'status': 'fine',
-                'injuries': []
-            },
-            'rightHand': {
-                'status': 'fine',
-                'injuries': []
-            },
-            'leftLeg': {
-                'status': 'fine',
-                'injuries': []
-            },
-            'rightLeg': {
-                'status': 'fine',
-                'injuries': []
-            },
-            'torso': {
-                'status': 'fine',
-                'injuries': []
-            },
-            'head': {
-                'status': 'fine',
-                'injuries': []
-            }
-        };
-        this.characteristics = {
-            'Agility': {
-                'masteryLevel': 0,
-                'masteryCircle': 0
-            }
-        };
-        this.skills = {
-            'Evasion': {
-                'relatedCharacteristic': 'Agility',
-                'masteryLevel': 0,
-                'masteryCircle': 0
-            }
-        };
+        this.bodyParts = this.initializeBodyParts([
+            'leftHand',
+            'rightHand',
+            'leftLeg',
+            'rightLeg',
+            'torso',
+            'head'
+        ]);
+        this.characteristics = this.initializeCharacteristics(['Agility']);
+        this.skills = this.initializeSkills([{
+            skillName: 'Evasion',
+            relatedCharacteristic: this.characteristics['Agility']
+        }]);
     }
 
-    attack(target) {
-        // Get a list of the target's body parts
-        const bodyParts = Object.keys(target.bodyParts);
+    initializeBodyParts(parts) {
+        return parts.reduce((acc, part) => ({
+            ...acc,
+            [part]: new BodyPart(),
+        }), {});
+    }
 
-        // Choose a random body part to injure
-        const randomBodyPart = bodyParts[Math.floor(Math.random() * bodyParts.length)];
+    initializeCharacteristics(characteristics) {
+        return characteristics.reduce((acc, characteristic) => ({
+            ...acc,
+            [characteristic]: new Characteristic(),
+        }), {});
+    }
 
-        // Add a new injury to the selected body part
-        target.bodyParts[randomBodyPart].injuries.push('wound');
-
-        // Check the overall status of the injured body part
-        if (target.bodyParts[randomBodyPart].injuries.length > 0) {
-            target.bodyParts[randomBodyPart].status = 'injured';
-        }
-        console.log(target);
+    initializeSkills(skills) {
+        return skills.reduce((acc, {skillName, relatedCharacteristic}) => ({
+            ...acc,
+            [skillName]: new Skill(relatedCharacteristic),
+        }), {});
     }
 }

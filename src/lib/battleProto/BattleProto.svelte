@@ -6,30 +6,17 @@
 
     const playerCharacter = writable(new Character('player'));
     const enemyCharacter = writable(new Character('enemy'));
-
+    let selectedBodyPart = '';
     $: logs = [];
+
     function unarmedAttack() {
         const {martial} = $playerCharacter.skills;
         const hit = rollDice(martial.mastery);
-        logs.push(hit);
-        logs = [...logs];
 
-        // const bodyPart = getRandomItem(bodyParts); // выбираем случайную часть тела для атаки
-        // const targetCharacter = Math.random() < 0.5 ? playerCharacter : enemyCharacter; // выбор цели атаки случайным образом
-        // const target = $targetCharacter;
-        //
-        // // Атакуем выбранную часть тела
-        // if(!target.bodyParts[bodyPart]) {
-        //     target.bodyParts[bodyPart] = {status: 'healthy', injuries: []};
-        // }
-        //
-        // const attackSuccess = Math.random() < 0.5; // 50% шанс успеха атаки
-        // if (attackSuccess) {
-        //     target.bodyParts[bodyPart].status = 'damaged';
-        //     target.bodyParts[bodyPart].injuries.push('cut');
-        // }
-        //
-        // targetCharacter.set(target); // Применяем изменения к целевому персонажу
+
+
+        logs.unshift(`Player attacked ${selectedBodyPart}, Hit: ${hit}`);
+        logs = [...logs];
     }
 </script>
 
@@ -37,6 +24,11 @@
     <div><Injuries character={$playerCharacter}/></div>
     <div><Injuries character={$enemyCharacter}/></div>
 </div>
+<select bind:value={selectedBodyPart}>
+    {#each Object.keys($enemyCharacter.bodyParts) as part}
+        <option value={part}>{part}</option>
+    {/each}
+</select>
 <button on:click="{unarmedAttack}">Punch</button>
 {#each logs as log}
     <p>{log}</p>

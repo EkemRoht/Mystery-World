@@ -5,17 +5,17 @@ class BodyPart {
     }
 }
 
-class Characteristic {
+class Param {
     constructor() {
-        this.masteryLevel = 0;
-        this.masteryCircle = 0;
+        this.mastery = 2;
+        this.circle = 0;
     }
 }
 
-class Skill extends Characteristic {
-    constructor(relatedCharacteristic) {
+class Skill extends Param {
+    constructor(relatedParam) {
         super();
-        this.relatedCharacteristic = relatedCharacteristic;
+        this.relatedParam = relatedParam;
     }
 }
 
@@ -30,10 +30,10 @@ export class Character {
             'torso',
             'head'
         ]);
-        this.characteristics = this.initializeCharacteristics(['Agility']);
+        this.characteristics = this.initializeParams(['agility']);
         this.skills = this.initializeSkills([{
-            skillName: 'Evasion',
-            relatedCharacteristic: this.characteristics['Agility']
+            skillName: 'martial',
+            relatedParam: this.characteristics['agility']
         }]);
     }
 
@@ -44,17 +44,17 @@ export class Character {
         }), {});
     }
 
-    initializeCharacteristics(characteristics) {
+    initializeParams(characteristics) {
         return characteristics.reduce((acc, characteristic) => ({
             ...acc,
-            [characteristic]: new Characteristic(),
+            [characteristic]: new Param(),
         }), {});
     }
 
     initializeSkills(skills) {
-        return skills.reduce((acc, {skillName, relatedCharacteristic}) => ({
+        return skills.reduce((acc, {skillName, relatedParam}) => ({
             ...acc,
-            [skillName]: new Skill(relatedCharacteristic),
+            [skillName]: new Skill(relatedParam),
         }), {});
     }
 }

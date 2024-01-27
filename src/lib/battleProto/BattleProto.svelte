@@ -2,12 +2,18 @@
     import {Character} from "./character.js";
     import {writable} from 'svelte/store';
     import Injuries from "./Injuries.svelte";
+    import {rollDice} from "./dices.js";
 
-    const playerCharacter = writable(new Character('player')); // создание стора для playerCharacter
-    const enemyCharacter = writable(new Character('enemy')); // создание стора для enemyCharacter
+    const playerCharacter = writable(new Character('player'));
+    const enemyCharacter = writable(new Character('enemy'));
 
-    // Отдельная функция безоружной атаки
+    $: logs = [];
     function unarmedAttack() {
+        const {martial} = $playerCharacter.skills;
+        const hit = rollDice(martial.mastery);
+        logs.push(hit);
+        logs = [...logs];
+
         // const bodyPart = getRandomItem(bodyParts); // выбираем случайную часть тела для атаки
         // const targetCharacter = Math.random() < 0.5 ? playerCharacter : enemyCharacter; // выбор цели атаки случайным образом
         // const target = $targetCharacter;
@@ -31,4 +37,7 @@
     <div><Injuries character={$playerCharacter}/></div>
     <div><Injuries character={$enemyCharacter}/></div>
 </div>
-<button on:click="{unarmedAttack}">Простой удар</button>
+<button on:click="{unarmedAttack}">Punch</button>
+{#each logs as log}
+    <p>{log}</p>
+{/each}

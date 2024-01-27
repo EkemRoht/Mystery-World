@@ -10,7 +10,9 @@
     <div>
         <p>Body parts status:</p>
         {#each Object.entries(character.bodyParts) as [part, {status, injuries}]}
-            <div>{part}: {status} {injuries.length > 0 ? `- Injuries: ${injuries.join(', ')}` : ''}</div>
+            {#if (injuries.length > 0)}
+                <div>{part}: - Injuries: {injuries.join(', ')}</div>
+            {/if}
         {/each}
     </div>
 </div>

@@ -12,10 +12,16 @@
     function unarmedAttack() {
         const {martial} = $playerCharacter.skills;
         const hit = rollDice(martial.mastery);
+        const target = $enemyCharacter;
+        // let efficiency = 3;
+        switch (hit) {
+            case 'success':
+                logs.unshift(`Player attacked ${selectedBodyPart} and wounded enemy.`);
+                target.bodyParts[selectedBodyPart].injuries.push('wound');
+                break;
+        }
 
-
-
-        logs.unshift(`Player attacked ${selectedBodyPart}, Hit: ${hit}`);
+        enemyCharacter.set(target);
         logs = [...logs];
     }
 </script>

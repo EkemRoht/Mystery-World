@@ -1,4 +1,4 @@
-function rollDice(count) {
+export function rollDice(count) {
     let result;
 
     if (count === 0) {

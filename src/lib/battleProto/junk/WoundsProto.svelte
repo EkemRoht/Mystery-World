@@ -2,7 +2,7 @@
     import {Character} from "./character.js";
     import {writable} from 'svelte/store';
     import Injuries from "./Injuries.svelte";
-    import {rollDice} from "./dices.js";
+    import {rollDice} from "../dices.js";
 
     const playerCharacter = writable(new Character('player'));
     const enemyCharacter = writable(new Character('enemy'));

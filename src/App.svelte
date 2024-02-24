@@ -1,7 +1,7 @@
 <script>
   import '@picocss/pico';
   import './app.css';
-  import BattleProto from "./lib/battleProto/BattleProto.svelte";
+  import TiersProto from "./lib/battleProto/TiersProto.svelte";
 </script>
 
 <main class="container">
@@ -12,5 +12,5 @@
     </hgroup>
   </nav>
 
-  <BattleProto/>
+  <TiersProto/>
 </main>

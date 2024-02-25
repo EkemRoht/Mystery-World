@@ -3,7 +3,7 @@ export class BodyPart {
         this.name = name;
         this.isVital = isVital;
         this.woundLevel = 0; // от 0 до 3
-        this.status = 'Healthy'; // Healthy or Disabled
+        this.status = 'Fine'; // Fine or Disabled
     }
 
     wound(level) {

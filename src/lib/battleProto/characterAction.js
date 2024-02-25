@@ -1,4 +1,4 @@
-class Action {
+export class CharacterAction {
     constructor(name, bodyPart, action) {
         this.name = name;
         this.bodyPart = bodyPart;

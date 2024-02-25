@@ -12,5 +12,18 @@ export class Human extends Character {
             leftLeg: new BodyPart('Left Leg'),
             rightLeg: new BodyPart('Right Leg')
         };
+
+        this.actions = {
+
+        };
+    }
+
+    act (name, target) {
+        let action = this.actions[name];
+        if (action) {
+            this.actions[name].perform(target);
+        } else {
+            console.log(`Action "${name}" is not available`);
+        }
     }
 }

@@ -8,7 +8,6 @@
     john.act('punchWithLeft', 'EnemyName');
     john.act('kickWithRight', 'Alien');
     john.act('bite', 'Zombie');
-/*
     // Результаты должны быть выведены в консоль следующим образом:
     // John executes punch with left arm with Left Arm to EnemyName!
     // John executes kick with right leg with Right Leg to Alien!
@@ -21,5 +20,5 @@
     john.bodyParts.leftArm.status = 'fine'; // Включаем обратно
 
     // Проверяем действие, которого не существует
-    john.act('unknownAction', 'EnemyName'); // Вызывает сообщение "Action "unknownAction" is not available"*/
+    john.act('unknownAction', 'EnemyName'); // Вызывает сообщение "Action "unknownAction" is not available"
 </script>

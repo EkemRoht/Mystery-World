@@ -6,6 +6,6 @@ export class CharacterAction {
     }
 
     perform(target) {
-        this.action(this.bodyPart, target);
+        this.action(this.name, this.bodyPart, target);
     }
 }
